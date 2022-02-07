@@ -1,0 +1,26 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+pylint = "*"
+flake8 = "*"
+pytest = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.9"
+
+[packages.code-challenges]
+editable = true
+path = "./src"
+
+[packages.hello-ppod-python]
+editable = true
+path = "./src"
+
+[packages.b7287bc]
+path = "./src"
+editable = true

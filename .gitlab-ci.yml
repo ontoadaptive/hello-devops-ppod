@@ -1,0 +1,26 @@
+# NOTE: https://hub.docker.com/r/library/python/tags/
+
+image: "python:3.9"
+
+before_script:
+  - python --version
+  - pip install -r requirements.txt
+
+stages:
+  - static analysis
+  - test
+  # NA. NOTE: will add more devops tasks
+
+flake8:
+  stage: static analysis
+  script:
+  # - make lint
+  - flake8 src/*.py
+
+
+pytest:
+  stage: test
+  script:
+  # - make test
+  - pip install -e src
+  - pytest -v
