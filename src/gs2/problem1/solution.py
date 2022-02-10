@@ -25,30 +25,30 @@ class Solution(object):
                     return True
                 else:
                     return False
+        def loop_through_game(listGame,turn):
+            tempTurn = turn
+            if(turn % 2 == 0):
+                letter = 'b'
+            else:
+                letter = 'w'
+            for x in range(0, len(listGame)):
+                if listGame[x] == letter:
+                    if game_tokens_same(listGame, x):
+                        del listGame[x + 1]
+                        tempTurn += 1
+                        break
+            if tempTurn == turn:
+                return False
+            else:
+                return True
         turn = 1
         playing = True
         listGame = list(game)
         while(playing):
-            while(turn % 2 == 0):
-                for x in range(0, len(listGame)):
-                    if listGame[x] == 'b':
-                        if game_tokens_same(listGame, x):
-                            del listGame[x + 1]
-                            turn += 1
-                            break
-                if turn % 2 == 0:
-                    playing = False
+            if loop_through_game(listGame, turn) != True:
+                if(turn % 2 == 0):
                     return 'Wendy'
-
-            while(turn % 2 != 0):
-                for x in range(0, len(listGame)):
-                    if listGame[x] == 'w':
-                        if game_tokens_same(listGame, x):
-                            del listGame[x + 1]
-                            turn += 1
-                            break
-                if turn % 2 != 0:
-                    playing = False
+                else:
                     return 'Bob'
-
-        return "Wendy"
+                playing = False
+            turn +=1

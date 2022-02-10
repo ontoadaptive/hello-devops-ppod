@@ -34,7 +34,7 @@ def test_bs_between_ws(solution):
     # print('actual:{0} '.format(actual))
     assert actual == expected
 
-def test_bs_between_ws(solution):
+def test_all_ws(solution):
     """
     ("www","Wendy")
     """

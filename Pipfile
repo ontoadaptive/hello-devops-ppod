@@ -8,6 +8,10 @@ pylint = "*"
 flake8 = "*"
 pytest = "*"
 
+[packages.hello-devops-ppod]
+editable = true
+path = "./src"
+
 [dev-packages]
 
 [requires]
