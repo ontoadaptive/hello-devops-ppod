@@ -50,4 +50,22 @@ def test_bs_and_ws(solution):
     expected = "Wendy"
     actual =  solution.winner("bbbbbwwwwwwbbwwwbwbwww")
     # print('actual:{0} '.format(actual))
-    assert actual == expected 
+    assert actual == expected
+
+def test_bs_between_ws2(solution):
+    """
+    ("wbbbbw","Bob")
+    """
+    expected = "Bob"
+    actual =  solution.winner("wbbbbw")
+    # print('actual:{0} '.format(actual))
+    assert actual == expected
+
+def test_ws_then_bs(solution):
+    """
+    ("wwwbbb","Bob")
+    """
+    expected = "Bob"
+    actual =  solution.winner("wwwbbb")
+    # print('actual:{0} '.format(actual))
+    assert actual == expected
